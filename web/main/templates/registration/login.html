@@ -1,0 +1,20 @@
+{%extends 'main/base.html'%}
+
+{%block title%}
+Войти/Регистрация
+{%endblock%}
+
+{%block sign%}
+    <nav class="nav justify-content-center float-md-end">
+        <a class="btn btn-lg btn-secondary fw-bold border-dark bg-dark" href="/">Главная страница</a>
+    </nav>
+{%endblock%}
+
+{%block content%}
+    <h1>Войдите в свою учетную запись</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}<br>
+        <button type="submit" class="btn btn-success">Войти</button>
+    </form>
+{%endblock%}
