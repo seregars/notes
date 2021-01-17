@@ -8,7 +8,7 @@ def home(request):
 
 
 def my_works(request):
-    tasks = Task.objects.all()
+    tasks = Task.objects.order_by('-id')
     dic = {'tasks':tasks}
     return render(request, 'main/my_works.html', dic)
 
